@@ -20,6 +20,16 @@ class Coordinator {
         let viewModel = MainViewModel()
         let viewController = MainViewController(viewModel: viewModel, coordinator: self)
         navigationController.pushViewController(viewController, animated: true)
+        
+        viewModel.selectedItem.subscribe(onNext: { [weak self] item in
+                self?.showDetailScreen(item: item)
+            }).disposed(by: disposeBag)
     }
+    
+    private func showDetailScreen(item: String) {
+            let viewModel = DetailViewModel(product: item)
+            let viewController = DetailsViewController(viewModel: viewModel)
+            navigationController.pushViewController(viewController, animated: true)
+        }
     
 }

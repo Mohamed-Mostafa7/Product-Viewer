@@ -33,9 +33,27 @@ class MainViewController: UIViewController {
         
         changeTheCollectionViewCellSize()
         registerCardCollectionViewCell()
-        bindToCollectionView()
+        
         viewModel.viewDidLoad()
+        bindFromCollectionView()
+        didSelectItem()
     }
+    
+    func bindFromCollectionView() {
+        viewModel.products.bind(to: collectionView.rx.items(cellIdentifier: CardCollectionViewCell.identifier, cellType: CardCollectionViewCell.self)) { _, item, cell in
+            cell.cardDescriptionLabel.text = "this is the description of the product!"
+        }
+        .disposed(by: disposeBag)
+    }
+    
+    func didSelectItem() {
+        collectionView.rx.modelSelected(String.self).bind(to: viewModel.selectedItem).disposed(by: disposeBag)
+    }
+    
+}
+
+// MARK: - Design the UI Here.
+extension MainViewController {
     
     func changeTheCollectionViewCellSize() {
         let layout = UICollectionViewFlowLayout()
@@ -50,13 +68,4 @@ class MainViewController: UIViewController {
     func registerCardCollectionViewCell() {
         collectionView.register(CardCollectionViewCell.nib(), forCellWithReuseIdentifier: CardCollectionViewCell.identifier)
     }
-    
-    func bindToCollectionView() {
-        viewModel.products.bind(to: collectionView.rx.items(cellIdentifier: CardCollectionViewCell.identifier, cellType: CardCollectionViewCell.self)) { _, item, cell in
-            cell.cardDescriptionLabel.text = "this is the description of the product if you care about it!"
-        }
-        .disposed(by: disposeBag)
-    }
-    
 }
-
