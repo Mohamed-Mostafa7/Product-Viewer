@@ -6,43 +6,57 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class MainViewController: UIViewController {
     
+    private let viewModel: MainViewModel
+    private let coordinator: Coordinator
+    private let disposeBag = DisposeBag()
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
+    init(viewModel: MainViewModel, coordinator: Coordinator) {
+        self.viewModel = viewModel
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Product Viewer"
+        
+        changeTheCollectionViewCellSize()
         registerCardCollectionViewCell()
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        bindToCollectionView()
+        viewModel.viewDidLoad()
+    }
+    
+    func changeTheCollectionViewCellSize() {
+        let layout = UICollectionViewFlowLayout()
+        let ViewWidth = view.frame.size.width
+        let cellWidth = ViewWidth/2.2
+        let cellHeight = ViewWidth/2
+        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        collectionView.collectionViewLayout = layout
     }
     
     func registerCardCollectionViewCell() {
         collectionView.register(CardCollectionViewCell.nib(), forCellWithReuseIdentifier: CardCollectionViewCell.identifier)
     }
-}
-
-extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+    
+    func bindToCollectionView() {
+        viewModel.products.bind(to: collectionView.rx.items(cellIdentifier: CardCollectionViewCell.identifier, cellType: CardCollectionViewCell.self)) { _, item, cell in
+            cell.cardDescriptionLabel.text = "this is the description of the product if you care about it!"
+        }
+        .disposed(by: disposeBag)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.identifier, for: indexPath) as? CardCollectionViewCell
-        cell?.cardImageView.image = UIImage(systemName: "person.fill")
-        cell?.cardTitleLabel.text = "Man"
-        cell?.cardPriceLabel.text = "20"
-        cell?.cardDescriptionLabel.text = "this a man fore sale if you like to have one."
-        
-        return cell ?? UICollectionViewCell()
-    }
 }
 
-extension MainViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = view.frame.size.width
-        return CGSize(width: width/2.2, height: width/1.8)
-    }
-}
