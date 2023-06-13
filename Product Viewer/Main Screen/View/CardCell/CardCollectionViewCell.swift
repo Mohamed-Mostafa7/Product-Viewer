@@ -25,6 +25,11 @@ class CardCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
+    func configure(item: Product) {
+        cardTitleLabel.text = item.name
+        cardPriceLabel.text = (item.price ?? "0") + "$"
+        cardDescriptionLabel.text = item.description
+    }
     
 
 }

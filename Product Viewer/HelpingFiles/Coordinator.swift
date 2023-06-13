@@ -26,7 +26,7 @@ class Coordinator {
             }).disposed(by: disposeBag)
     }
     
-    private func showDetailScreen(item: String) {
+    private func showDetailScreen(item: Product) {
             let viewModel = DetailViewModel(product: item)
             let viewController = DetailsViewController(viewModel: viewModel)
             navigationController.pushViewController(viewController, animated: true)

@@ -31,23 +31,32 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         title = "Product Viewer"
         
-        changeTheCollectionViewCellSize()
         registerCardCollectionViewCell()
         
         viewModel.viewDidLoad()
-        bindFromCollectionView()
+        bindToCollectionView()
         didSelectItem()
     }
     
-    func bindFromCollectionView() {
+    override func viewWillLayoutSubviews() {
+        changeTheCollectionViewCellSize()
+    }
+    
+    func bindToCollectionView() {
         viewModel.products.bind(to: collectionView.rx.items(cellIdentifier: CardCollectionViewCell.identifier, cellType: CardCollectionViewCell.self)) { _, item, cell in
-            cell.cardDescriptionLabel.text = "this is the description of the product!"
+            guard let product = item.product else { return }
+            cell.configure(item: product)
         }
         .disposed(by: disposeBag)
     }
     
     func didSelectItem() {
-        collectionView.rx.modelSelected(String.self).bind(to: viewModel.selectedItem).disposed(by: disposeBag)
+        
+        collectionView.rx.modelSelected(Products.self).subscribe(onNext: { [weak self] products in
+            guard let product = products.product else { return }
+            self?.viewModel.selectedItem.onNext(product)
+        }).disposed(by: disposeBag)
+        
     }
     
 }
@@ -58,8 +67,8 @@ extension MainViewController {
     func changeTheCollectionViewCellSize() {
         let layout = UICollectionViewFlowLayout()
         let ViewWidth = view.frame.size.width
-        let cellWidth = ViewWidth/2.2
-        let cellHeight = ViewWidth/2
+        let cellWidth = ViewWidth/2.3
+        let cellHeight = ViewWidth/1.9
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         collectionView.collectionViewLayout = layout

@@ -8,9 +8,9 @@
 import Foundation
 
 class DetailViewModel {
-    let product: String
+    let product: Product
     
-    init(product: String) {
+    init(product: Product) {
         self.product = product
     }
 }

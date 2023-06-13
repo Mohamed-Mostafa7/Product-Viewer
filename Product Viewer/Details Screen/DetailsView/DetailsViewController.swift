@@ -26,7 +26,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Detail"
-        nameLabel.text = viewModel.product
+        nameLabel.text = viewModel.product.name
         
     }
     
