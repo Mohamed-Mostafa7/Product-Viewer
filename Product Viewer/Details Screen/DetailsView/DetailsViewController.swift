@@ -10,10 +10,13 @@ import UIKit
 class DetailsViewController: UIViewController {
     
     private let viewModel: DetailViewModel
+    
         
-    @IBOutlet weak var nameLabel: UILabel!
-        
-        init(viewModel: DetailViewModel) {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var productImageView: UIImageView!
+    
+    
+    init(viewModel: DetailViewModel) {
             self.viewModel = viewModel
             super.init(nibName: nil, bundle: nil)
         }
@@ -26,7 +29,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Detail"
-        nameLabel.text = viewModel.product.name
+        titleLabel.text = viewModel.product.name
         
     }
     

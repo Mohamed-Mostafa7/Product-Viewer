@@ -43,7 +43,6 @@ struct APIRequest<T: Decodable> {
                 }
                 
                 do {
-                    print(data.description)
                     let decoder = JSONDecoder()
                     let decodedData = try decoder.decode(T.self, from: data)
                     print(decodedData)
