@@ -40,6 +40,7 @@ class MainViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         changeTheCollectionViewCellSize()
+        viewModel.getStoredData()
     }
     
     func bindToCollectionView() {
