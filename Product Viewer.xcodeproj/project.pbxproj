@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E907FE192A394C230045F798 /* Product Viewr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E907FE172A394C230045F798 /* Product Viewr.xcdatamodeld */; };
+		E907FE1B2A394CBF0045F798 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E907FE1A2A394CBF0045F798 /* CoreDataManager.swift */; };
 		E951BD092A348B0400250EF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951BD082A348B0400250EF7 /* AppDelegate.swift */; };
 		E951BD0B2A348B0400250EF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951BD0A2A348B0400250EF7 /* SceneDelegate.swift */; };
 		E951BD122A348B0600250EF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E951BD112A348B0600250EF7 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E907FE182A394C230045F798 /* Product Viewr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Product Viewr.xcdatamodel"; sourceTree = "<group>"; };
+		E907FE1A2A394CBF0045F798 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E951BD052A348B0400250EF7 /* Product Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Product Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E951BD082A348B0400250EF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E951BD0A2A348B0400250EF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E907FE162A394BFC0045F798 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				E907FE172A394C230045F798 /* Product Viewr.xcdatamodeld */,
+				E907FE1A2A394CBF0045F798 /* CoreDataManager.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		E951BCFC2A348B0300250EF7 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +116,7 @@
 		E966D86C2A34F59600C4DF38 /* HelpingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				E907FE162A394BFC0045F798 /* Core Data */,
 				E964861A2A36215A00796A87 /* Coordinator.swift */,
 				E97E76012A3695D200AAB3EC /* ApiRequest.swift */,
 			);
@@ -268,8 +282,10 @@
 				E964861B2A36215A00796A87 /* Coordinator.swift in Sources */,
 				E96486232A36709F00796A87 /* DetailsViewModel.swift in Sources */,
 				E951BD092A348B0400250EF7 /* AppDelegate.swift in Sources */,
+				E907FE1B2A394CBF0045F798 /* CoreDataManager.swift in Sources */,
 				E97E76022A3695D200AAB3EC /* ApiRequest.swift in Sources */,
 				E96486202A36706100796A87 /* DetailsViewController.swift in Sources */,
+				E907FE192A394C230045F798 /* Product Viewr.xcdatamodeld in Sources */,
 				E951BD0B2A348B0400250EF7 /* SceneDelegate.swift in Sources */,
 				E964861D2A3621F300796A87 /* MainViewModel.swift in Sources */,
 			);
@@ -514,6 +530,19 @@
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		E907FE172A394C230045F798 /* Product Viewr.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E907FE182A394C230045F798 /* Product Viewr.xcdatamodel */,
+			);
+			currentVersion = E907FE182A394C230045F798 /* Product Viewr.xcdatamodel */;
+			path = "Product Viewr.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E951BCFD2A348B0300250EF7 /* Project object */;
 }

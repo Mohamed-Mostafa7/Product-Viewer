@@ -29,7 +29,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Detail"
-        titleLabel.text = viewModel.product.name
+        titleLabel.text = viewModel.product.title
         
     }
     

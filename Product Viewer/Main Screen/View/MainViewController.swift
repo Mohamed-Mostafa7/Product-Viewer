@@ -43,8 +43,7 @@ class MainViewController: UIViewController {
     }
     
     func bindToCollectionView() {
-        viewModel.products.bind(to: collectionView.rx.items(cellIdentifier: CardCollectionViewCell.identifier, cellType: CardCollectionViewCell.self)) { _, item, cell in
-            guard let product = item.product else { return }
+        viewModel.productCoreData.bind(to: collectionView.rx.items(cellIdentifier: CardCollectionViewCell.identifier, cellType: CardCollectionViewCell.self)) { _, product, cell in
             cell.configure(item: product)
         }
         .disposed(by: disposeBag)
@@ -52,8 +51,7 @@ class MainViewController: UIViewController {
     
     func didSelectItem() {
         
-        collectionView.rx.modelSelected(Products.self).subscribe(onNext: { [weak self] products in
-            guard let product = products.product else { return }
+        collectionView.rx.modelSelected(ProductCoreData.self).subscribe(onNext: { [weak self] product in
             self?.viewModel.selectedItem.onNext(product)
         }).disposed(by: disposeBag)
         
