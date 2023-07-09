@@ -29,6 +29,11 @@ class CardCollectionViewCell: UICollectionViewCell {
         cardTitleLabel.text = item.title
         cardPriceLabel.text = (item.price ?? "0") + "$"
         cardDescriptionLabel.text = item.descriptions
+        if let data = item.image {
+            cardImageView.image = UIImage(data: data)
+        } else {
+            cardImageView.image = UIImage(systemName: "photo")
+        }
     }
     
 

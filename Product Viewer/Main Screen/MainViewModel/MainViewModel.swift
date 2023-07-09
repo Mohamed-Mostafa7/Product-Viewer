@@ -42,6 +42,8 @@ class MainViewModel {
             }
             let products = self.coreDataManager.fetchProducts()
             self.productCoreData.onNext(products)
+            
+            self.downloadProductsImages(downloadedProducts: products)
             }, onError: { error in
                 // handle error
                 print(".................................")
@@ -49,4 +51,19 @@ class MainViewModel {
             }).disposed(by: disposeBag)
     }
     
+    private func downloadProductsImages(downloadedProducts: [ProductCoreData]) {
+        for product in downloadedProducts {
+            let url = URL(string: product.imageUrl!)
+            do {
+                let data = try Data(contentsOf: url!)
+                product.image = data
+                coreDataManager.saveContext()
+                let products = self.coreDataManager.fetchProducts()
+                self.productCoreData.onNext(products)
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+
 }

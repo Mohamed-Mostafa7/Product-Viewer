@@ -30,6 +30,9 @@ class DetailsViewController: UIViewController {
         
         title = "Detail"
         titleLabel.text = viewModel.product.title
+        if let image = viewModel.product.image {
+            productImageView.image = UIImage(data: image)
+        }
         
     }
     

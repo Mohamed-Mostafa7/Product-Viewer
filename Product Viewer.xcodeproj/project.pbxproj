@@ -116,9 +116,9 @@
 		E966D86C2A34F59600C4DF38 /* HelpingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				E907FE162A394BFC0045F798 /* Core Data */,
 				E964861A2A36215A00796A87 /* Coordinator.swift */,
 				E97E76012A3695D200AAB3EC /* ApiRequest.swift */,
+				E907FE162A394BFC0045F798 /* Core Data */,
 			);
 			path = HelpingFiles;
 			sourceTree = "<group>";

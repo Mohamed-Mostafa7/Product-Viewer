@@ -45,7 +45,6 @@ struct APIRequest<T: Decodable> {
                 do {
                     let decoder = JSONDecoder()
                     let decodedData = try decoder.decode(T.self, from: data)
-                    print(decodedData)
                     observer.onNext(decodedData)
                     observer.onCompleted()
                 } catch {
