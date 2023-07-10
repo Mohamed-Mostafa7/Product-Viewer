@@ -34,15 +34,26 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ro1-gV-TbE">
+                    <rect key="frame" x="0.0" y="146.33333333333334" width="393" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="y5Z-li-C8b"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="t1K-kA-H6N" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="3bA-Zc-PNJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="t1K-kA-H6N" secondAttribute="trailing" id="3bO-OP-nBo"/>
                 <constraint firstItem="EMX-Nz-mPb" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="8nA-2w-eCP"/>
+                <constraint firstItem="Ro1-gV-TbE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ABq-VN-dYr"/>
                 <constraint firstItem="EMX-Nz-mPb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="JJf-eQ-HM1"/>
                 <constraint firstItem="t1K-kA-H6N" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="NdO-ZU-5Gs"/>
-                <constraint firstItem="t1K-kA-H6N" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="gYX-ya-XPt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ro1-gV-TbE" secondAttribute="trailing" id="OpT-rg-K3u"/>
+                <constraint firstItem="Ro1-gV-TbE" firstAttribute="top" secondItem="EMX-Nz-mPb" secondAttribute="bottom" constant="5" id="PNI-qc-349"/>
+                <constraint firstItem="t1K-kA-H6N" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="i4a-k2-sfB"/>
                 <constraint firstItem="EMX-Nz-mPb" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="syr-ss-ZkS"/>
             </constraints>
             <point key="canvasLocation" x="-5.343511450381679" y="24.647887323943664"/>

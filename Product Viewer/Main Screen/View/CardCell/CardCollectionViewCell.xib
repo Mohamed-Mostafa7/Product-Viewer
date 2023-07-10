@@ -50,21 +50,31 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Description Description Description Description Description Description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSV-jG-Lig">
-                                <rect key="frame" x="5" y="259.33333333333331" width="266" height="26.333333333333314"/>
+                                <rect key="frame" x="5" y="265.33333333333331" width="266" height="26.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Abc-3W-fzr">
+                                <rect key="frame" x="0.0" y="259.33333333333331" width="276" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="MQy-pH-kn8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="r4M-uF-xeK" firstAttribute="width" secondItem="bOT-tr-65V" secondAttribute="width" id="4u7-mK-Ph4"/>
-                            <constraint firstItem="sSV-jG-Lig" firstAttribute="top" secondItem="br5-E8-PqL" secondAttribute="bottom" constant="5" id="7aO-x0-L4W"/>
                             <constraint firstAttribute="trailing" secondItem="sSV-jG-Lig" secondAttribute="trailing" constant="5" id="Kib-rW-LEP"/>
                             <constraint firstItem="br5-E8-PqL" firstAttribute="leading" secondItem="bOT-tr-65V" secondAttribute="leading" constant="5" id="TVu-lF-4HX"/>
+                            <constraint firstItem="sSV-jG-Lig" firstAttribute="top" secondItem="Abc-3W-fzr" secondAttribute="bottom" constant="5" id="WsX-Zh-zu4"/>
+                            <constraint firstItem="Abc-3W-fzr" firstAttribute="leading" secondItem="bOT-tr-65V" secondAttribute="leading" id="ba3-gO-i0p"/>
                             <constraint firstItem="br5-E8-PqL" firstAttribute="top" secondItem="r4M-uF-xeK" secondAttribute="bottom" constant="5" id="bjb-mc-mQo"/>
                             <constraint firstItem="r4M-uF-xeK" firstAttribute="centerX" secondItem="bOT-tr-65V" secondAttribute="centerX" id="d2S-Yw-vph"/>
                             <constraint firstAttribute="trailing" secondItem="br5-E8-PqL" secondAttribute="trailing" constant="5" id="dwR-h5-ycT"/>
+                            <constraint firstItem="Abc-3W-fzr" firstAttribute="top" secondItem="br5-E8-PqL" secondAttribute="bottom" constant="5" id="iii-ol-ftG"/>
+                            <constraint firstAttribute="trailing" secondItem="Abc-3W-fzr" secondAttribute="trailing" id="jjq-fN-egR"/>
                             <constraint firstItem="sSV-jG-Lig" firstAttribute="leading" secondItem="bOT-tr-65V" secondAttribute="leading" constant="5" id="nvz-nm-b8w"/>
                             <constraint firstItem="r4M-uF-xeK" firstAttribute="top" secondItem="bOT-tr-65V" secondAttribute="top" constant="5" id="u5Q-Ca-FKz"/>
                         </constraints>
