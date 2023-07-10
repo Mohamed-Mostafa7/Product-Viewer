@@ -66,10 +66,10 @@ extension MainViewController {
     func changeTheCollectionViewCellSize() {
         let layout = UICollectionViewFlowLayout()
         let ViewWidth = view.frame.size.width
-        let cellWidth = ViewWidth/2.3
-        let cellHeight = ViewWidth/1.9
+        let cellWidth = ViewWidth/2.5
+        let cellHeight = ViewWidth/2
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         collectionView.collectionViewLayout = layout
     }
     

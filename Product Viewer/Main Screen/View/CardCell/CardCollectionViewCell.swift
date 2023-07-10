@@ -15,6 +15,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     
     
+    @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var cardImageView: UIImageView!
     @IBOutlet weak var cardTitleLabel: UILabel!
     @IBOutlet weak var cardPriceLabel: UILabel!
@@ -23,6 +24,8 @@ class CardCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        cardView.layer.cornerRadius = 20
+        cardView.clipsToBounds = true
     }
     
     func configure(item: ProductCoreData) {
