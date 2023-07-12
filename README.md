@@ -12,11 +12,11 @@ To install and run User Product Viewer locally, follow these steps:
 
 1. Clone the repository:
 ```bash
-git install https://github.com/Mohamed-Mostafa7/Product-Viewer.git
+git clone https://github.com/Mohamed-Mostafa7/Product-Viewer.git
 ```
 2. Open the project:
 ```bash
-cd Product-Viewr
+cd Product-Viewer
 ```
 3. install required packages:
 ```bash
@@ -26,10 +26,12 @@ swift package update
 5. Build and run the project.
 
 ## Features
+
 - Online mode: Once the user open the app it will start getting the data from the server.
 - asynchronous image downloading: The products image will be downloaded one by one and presented to the user so thet the UI do not freez while downloading all the available pictures.
 - Offline mode: The user can still see the previously loaded results that are stored locally using Core Data if he is not connected to the internet.
-- Example images of the app:
+
+## Screenshots
 <p align="Center">
   <img src="https://github.com/Mohamed-Mostafa7/Product-Viewer/assets/55007694/96aa0b1b-4233-4b38-b2c0-d0dc8fd88387" width="25%">
   <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/55007694/252982081-8f66d2f5-b32f-4828-b1c7-6af54bd2a309.png" width="25%"> 
