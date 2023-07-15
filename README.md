@@ -1,22 +1,23 @@
-# Product-Viewer
+
+# Countries
 
 <p align="center">
-  <img src="https://cdn2.iconfinder.com/data/icons/virus-coronavirus-1/64/virus_sanitizer_personal_care_products-1024.png" alt="Products Viewr logo" width="30%">
+  <img src="https://cdn3.iconfinder.com/data/icons/virus-41/512/Countries-1024.png" alt="Products Viewr logo" width="30%">
 </p>
 
-  Product Viewer is an app that provide the user with the products provided by the API where the user can see details about every single product where you can see MVVM and RxSwift implemented perfectly.
+Countries is an app that help the user to get some information about any country in the world like its capital, continent, population, and location on the map.
 
 ## Installation
 
-To install and run User Product Viewer locally, follow these steps:
+To install and run Countries on your device, follow these steps:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Mohamed-Mostafa7/Product-Viewer.git
+git clone https://github.com/Mohamed-Mostafa7/Countries.git
 ```
 2. Open the project:
 ```bash
-cd Product-Viewer
+cd Countries
 ```
 3. install required packages:
 ```bash
@@ -26,27 +27,30 @@ swift package update
 5. Build and run the project.
 
 ## Features
-
-- Online mode: Once the user open the app it will start getting the data from the server.
-- asynchronous image downloading: The products image will be downloaded one by one and presented to the user so thet the UI do not freez while downloading all the available pictures.
-- Offline mode: The user can still see the previously loaded results that are stored locally using Core Data if he is not connected to the internet.
-
+- Show countries: The main screen present a table with all the countries in the world.
+- Search: The user can search for directly  for the country that he needs to get information about.
+- Details: By choosing a country the user can see the all information about it.
+- Map: Showing the country on the map make it better to get its location specifically.
+  
 ## Screenshots
 <p align="Center">
-  <img src="https://github.com/Mohamed-Mostafa7/Product-Viewer/assets/55007694/96aa0b1b-4233-4b38-b2c0-d0dc8fd88387" width="25%">
-  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/55007694/252982081-8f66d2f5-b32f-4828-b1c7-6af54bd2a309.png" width="25%"> 
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/55007694/253744616-d79947bd-de0e-41b6-ae3f-8d7d0e304c56.png" width="23%">
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/55007694/253744620-dedb9eb1-e64e-4833-9d62-76cbcc682b40.png" width="23%"> 
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/55007694/253744623-038828ed-68ff-4727-afa5-4356713a934b.png" width="23%"> 
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/55007694/253744628-4043a5b4-1e96-47a8-94ff-d9daab508a8e.png" width="23%"> 
 </p>
+
+
 
 ## Technologies Used
 
-The following technologies were used in the development of Product Viewer:
-- RxSwift
-- MVVM
-- Core Data
-- SPM
-- Coordinator design pattern
-- URL session
+The following technologies were used in the development of Contacts:
+- MVC Architecture pattern
+- URLSession Networking
 - Json parsing
+- Kingfisher libirary
+- MapKit
+
 
 ## Contributing
 
